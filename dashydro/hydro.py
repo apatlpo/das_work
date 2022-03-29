@@ -16,6 +16,23 @@ elif os.getlogin()=="toto":
 else:
     print("You need to update root_data_dir in das_work/dashydo/hydro.py")
 
+# ------------------------------- misc ------------------------------------------
+
+toulon = dict(lon=5.9, lat=43.)
+
+def get_f(lat):
+    """ outputs the Coriolis frequency
+
+    Parameters
+    ----------
+    lat: float
+        Latitude where to compute the Coriolis frequency
+
+    """
+    f = 2 *2*np.pi/86164.1 * np.sin(lat*np.pi/180)
+    f_cpd = f*86400/2/np.pi
+    return f, f_cpd
+
 # ------------------------------- WOA ------------------------------------------
 
 woa_dir = os.path.join(root_data_dir, "woa")
