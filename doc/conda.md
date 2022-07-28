@@ -10,6 +10,40 @@ bash
 conda update conda
 ```
 
+## install from scratch
+
+```
+conda create -n dashydro -c conda-forge python=3.8 tqdm \
+            xarray zarr netcdf4 dask-jobqueue bottleneck \
+            jupyterlab ipywidgets \
+            cartopy geopandas descartes xesmf \
+            datashader geoviews hvplot \
+            scikit-learn seaborn \
+            xgcm cmocean gsw pyinterp \
+            xhistogram xrft
+
+conda activate dashydro
+
+pip install git+https://github.com/apatlpo/synthetic_stats.git
+pip install git+https://github.com/psf/black
+
+# may need to ask permissions to aurelien here
+git clone https://github.com/apatlpo/das_work.git
+cd dashydro; pip install -e .
+cd ..
+
+# may need to ask permissions to aurelien here
+git clone https://github.com/apatlpo/pynsitu.git
+cd pynsitu; pip install -e .
+cd ..
+
+```
+
+### Uninstall library with `pip install -e .`:
+
+- remove the egg file ( `print(distributed.__file__)` for example)
+- from file `easy-install.pth`, remove the corresponding line (it should be a path to the source directory or of an egg file).
+
 ## install from environment file
 
 ```
@@ -23,32 +57,8 @@ In order to create an environment file, you need to run:
 
 ```
 conda env export --name dashydro --file environment.yml
-```
 #--from-history
-## install from scratch
-
 ```
-conda create -n dashydro -c conda-forge python=3.8 tqdm \
-            xarray zarr netcdf4 dask-jobqueue bottleneck \
-            jupyterlab ipywidgets \
-            cartopy geopandas descartes xesmf \
-            datashader geoviews hvplot \
-            scikit-learn seaborn \
-            xgcm cmocean gsw \
-            xhistogram xrft
-
-conda activate dashydro
-
-pip install git+https://github.com/apatlpo/synthetic_stats.git
-pip install git+https://github.com/psf/black
-
-cd dashydro; pip install -e .
-```
-
-## Uninstall library with `pip install -e .`:
-
-- remove the egg file ( `print(distributed.__file__)` for example)
-- from file `easy-install.pth`, remove the corresponding line (it should be a path to the source directory or of an egg file).
 
 # General information about miniconda:
 
