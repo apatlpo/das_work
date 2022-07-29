@@ -3,7 +3,7 @@ __all__ = ["hydro", "theory"]
 
 import pandas as pd
 
-deployments = {
+deployments_info = {
     "2019_summer_toulon": dict(start = pd.Timestamp(2019,7,13),
                                end = pd.Timestamp(2019,7,31),
                                site = "toulon",
