@@ -14,7 +14,7 @@ conda update conda
 
 ```
 conda create -n dashydro -c conda-forge python=3.8 tqdm \
-            xarray zarr netcdf4 dask-jobqueue bottleneck \
+            xarray zarr netcdf4 h5py dask-jobqueue bottleneck \
             jupyterlab ipywidgets \
             cartopy geopandas descartes xesmf \
             datashader geoviews hvplot \
