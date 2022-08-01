@@ -8,23 +8,7 @@ import matplotlib.pyplot as plt
 
 import gsw
 
-# ------------------------------- paths ------------------------------------------
-
-if os.getlogin()=="aponte":
-    #root_data_dir = "/Users/aponte/Cloud/Dropbox/Public/das"
-    root_data_dir = "/Users/aponte/Current_Projects/das/data"
-elif os.getlogin()=="toto":
-    root_data_dir = "/path/to/datadir"
-else:
-    print("You need to update root_data_dir in das_work/dashydo/hydro.py")
-
-def raw_dir(deployment):
-    """return path to deployment raw data dir"""
-    return os.path.join(root_data_dir, deployment, "raw/")
-
-def processed_dir(deployment):
-    """return path to deployment processed data dir"""
-    return os.path.join(root_data_dir, deployment, "processed/")
+from .common import *
 
 # ------------------------------- misc ------------------------------------------
 
