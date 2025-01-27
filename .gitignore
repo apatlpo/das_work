@@ -21,6 +21,7 @@ __pycache__/
 # data files
 *.nc
 *.zarr
+*.csv
 
 # fig and movies
 *.png
@@ -50,3 +51,4 @@ jlab.pbs.o*
 sandbox/data
 run_*
 log
+*.html
